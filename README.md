@@ -1,7 +1,11 @@
-# zabbix
-Configurações e Scripts para o Zabbix
+# Zabbix e Zoneminder
+Configurações e Scripts para o monitoramento do daemon do Zoneminder através do Zabbix
 
-editar /etc/zabbix/zabbix_agentd.conf
+
+# No servidor Zoneminder acesse:
+vim /etc/zabbix/zabbix_agentd.conf
+
+# acrescente...
 #### ZONEMINDER STATUS
 UserParameter=zm.status,service zoneminder status | grep -i running | awk '{print $3}'| sed 's/[( )]//g'
 
